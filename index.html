@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8교시 - 두번째 미션</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        #layout {
+            max-width: 80vw;
+            background-color: #fdf0d5;
+            border: 10px solid #003049;
+            border-radius: 20px;
+            margin: auto;
+            margin-top: 15vh;
+            margin-bottom: 10px;
+            padding: 30px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .box {
+            background-color: #fdf0d5;
+            border: 5px solid #c1121f;
+            border-radius: 10px;
+            width: 250px;
+            padding: 0 10px 20px;
+        }
+
+        form [type="submit"], form [type="reset"] {
+            margin: auto;
+            display: block;
+        }
+
+        footer {
+            width: 500px;
+            height: 300px;
+            border: 10px solid blue;
+            padding: 50px;
+        }
+
+        @media(max-width:700px) {
+            #layout> * {width: 100%;}
+            footer {width: auto;}
+        }
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <div class="box">
+            <h2>text/password</h2>
+            <form action="#">
+                <label for="aaa">아이디</label><br>
+                <input type="text" id="aaa" name="fname" placeholder="홍"><br>
+                <label for="bbb">비밀번호</label><br>
+                <input type="password" id="bbb" name="lname" placeholder="길동"><br><br>
+                <input type="submit" value="로그인">
+                <input type="reset" value="초기화">
+            </form> 
+        </div>
+
+        <div class="box">
+            <h2>email</h2>
+            <form action="#">
+                <label for="email">email</label>
+                <input type="email" id="email" name="ema"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div class="box">
+            <h2>image</h2>
+            <form action="#">
+                <label for="image">image</label><br>
+                <input type="image" src="/buttonImg.png" id="image" width="60" height="60">
+            </form>
+        </div>
+
+        <div class="box">
+            <h2>radio</h2>
+            <form action="#">
+                <input type="radio" id="yes" name="rad">
+                <label for="yes">예</label><br>
+                <input type="radio" id="no" name="rad">
+                <label for="no">아니오</label>
+            </form>
+        </div>
+
+        <div class="box">
+            <h2>checkbox</h2>
+            <form action="#">
+                <input type="checkbox" id="a" name="che">
+                <label for="a">A</label><br>
+                <input type="checkbox" id="b" name="che">
+                <label for="b">B</label><br>
+            </form>
+        </div>
+
+        <div class="box">
+            <h2>color</h2>
+            <form action="#">
+                <label for="color">color</label>
+                <input type="color" id="color" name="col">
+            </form>
+        </div>
+
+        <div class="box">
+            <h2>date</h2>
+            <form action="#">
+                <label for="date">date</label><br>
+                <input type="date" id="date" name="dat">
+            </form>
+        </div>
+
+        <div class="box">
+            <h2>datetime-local</h2>
+            <form action="#">
+                <label for="datetime">datetime-local</label><br>
+                <input type="datetime-local" id="datetime" name="datim">
+            </form>
+        </div>
+
+        <div class="box">
+            <h2>time</h2>
+            <form action="#">
+                <label for="time">time</label><br>
+                <input type="time" id="time" name="tim">
+            </form>
+        </div>
+
+        <div class="box">
+            <h2>file</h2>
+            <form action="#">
+                <label for="file">file</label>
+                <input type="file" id="file" name="fil">
+            </form>
+        </div>
+
+        <div class="box">
+            <h2>hidden</h2>
+            <form action="#">
+                <label for="hidden">hidden</label>
+                <input type="hidden" id="hidden" name="hid">
+            </form>
+        </div>
+
+        <div class="box">
+            <h2>number</h2>
+            <form action="#">
+                <label for="number">number</label><br>
+                <input type="number" id="number" name="num">
+            </form>
+        </div>
+
+        <div class="box">
+            <h2>range</h2>
+            <form action="#">
+                <label for="range">range</label><br>
+                <input type="range" id="range" name="ran">
+            </form>
+        </div>
+
+        <div class="box">
+            <h2>search</h2>
+            <form action="#">
+                <label for="search">search</label><br>
+                <input type="search" id="search" name="ser">
+            </form>
+        </div>
+
+        <div class="box">
+            <h2>tel</h2>
+            <form action="#">
+                <label for="tel">tel</label><br>
+                <input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
+            </form>
+        </div>
+    </div>
+    <!-- <footer>
+        <h2>하단 정보</h2>
+    </footer> -->
+</body>
+</html>
