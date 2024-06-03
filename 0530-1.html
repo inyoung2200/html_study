@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap');
+
+        html {
+            font-family: "Sunflower", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        table {
+            width: 500px;
+            border-collapse: collapse;
+        }
+        thead th {
+            background-color: red;
+        }
+        td, th {
+            border: 1px solid #000;
+        }
+        .c1 {
+            background-color: #ff0;
+        }
+        .c2 {
+            background-color: #0ff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            <col class="c1">
+            <col class="c2">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>교과목</th>
+                <th>점수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>HTML</th>
+                <td id="s1"></td>
+            </tr>
+            <tr>
+                <th>CSS</th>
+                <td id="s2"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>평균</th>
+                <td id="s3"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        // const cell_1 = document.getElementById("s1");
+        // const cell_2 = document.getElementById("s2");
+        // const cell_3 = document.getElementById("s3");
+
+        // const cc1 = parseInt(cell_1.innerHTML);
+        // console.log(cc1);
+
+        // const cc2 = parseInt(cell_2.innerHTML);
+        // console.log(cc2);
+
+        // cell_3.innerHTML = (cc1 + cc2)/2 + "점";
+
+        // cell_1.innerHTML = 93;
+
+        // // alert(cell_1.innerHTML);
+        // // alert(typeof cell_1.innerHTML);
+        // // alert(cell_1.innerHTML + 5);
+
+        // let c2 = Number(cell_1.innerHTML);
+        // // alert(typeof c2);
+
+        // c2 = --c2;
+        // console.log(c2);
+        // cell_2.innerHTML = c2;
+
+        // for문연습
+        // for(let i=0; i<10; i++) {
+        //     alert( i );
+        //     if(i==3) {
+        //         document.getElementById("s3").innerHTML=i;
+        //     }
+        // }
+
+        const ss = document.getElementById("s3");
+        for(let i=2; i<10; i++) {
+            document.getElementById("s3").innerHTML += ( i + "단 <br>" );
+            for(let j=1; j<10; j++) {
+                ss.innerHTML += ( i + "*" + j + "=" + i * j + "<br>" );
+                if(j == 9) {
+                    ss.innerHTML += "<br>";
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

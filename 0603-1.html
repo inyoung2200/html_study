@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for of문</title>
+</head>
+<body>
+    <h3>이곳에 결과를 표시한다.</h3>
+
+    <script>
+        const x = [2,4,6,8];    //const는 재할당 불가
+        let y = 0;  //let은 재할당(사칙연산, 값변경 등)이 가능하다
+
+        for(let i of x) {
+            y += i;
+            document.querySelector('h3').innerHTML += "<br>" + y;
+        };
+
+
+        const xx = ['딸기', '바나나', '파인애플'];
+        let yy = "";
+
+        for (const i of xx) {
+            yy += i;
+            document.querySelector('h3').innerHTML += "<br>" + yy;
+        }
+    </script>
+</body>
+</html>

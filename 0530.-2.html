@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>셀합치기</title>
+    <style>
+        table {
+            width: 1000px;
+            border-collapse: collapse;
+            margin: auto;
+        }
+        td, th {
+            border: 1px solid #000;
+            text-align: center;
+        }
+        p {
+            width: 1000px;
+            height: 100px;
+            border: 1px solid #000;
+            text-align: center;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>상품에 따른 상하반기 판매량</caption>
+        <colgroup>
+            <col style="background-color: skyblue;">
+            <col style="background-color: rebeccapurple;">
+            <col style="background-color: salmon;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">구분</th>
+                <th scope="col">데스크탑</th>
+                <th scope="col" onclick="t2('짜장면', '짬뽕')">스마트폰</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" onclick="snag('딸기')">상반기 판매수</th>
+                <td id="t1" onclick="clickEvent()">2만원대</td>
+                <td onclick="sss(50,70)">5만원대</td>
+            </tr>
+            <tr>
+                <th scope="row" onclick="ha(3,5)">하반기 판매수</th>
+                <td>3만원대</td>
+                <td id="chil">7만원대</td>
+            </tr>
+        </tbody>
+    </table>
+    <p id="p1"></p>
+
+    <script>
+        const t1 = document.getElementById("t1");
+        const p1 = document.getElementById("p1");
+
+        t1.style.background = "red";
+
+        function clickEvent() {
+            p1.innerHTML = t1.innerHTML;
+        }
+
+        function snag(i) {
+            p1.innerHTML = i + "는(은) " + typeof i + " 형입니다";
+        }
+
+        function ha(i, j) {
+            p1.innerHTML = "나는 오늘 오후" + i + "시에 친구랑 중앙로" + j + "가에서 만나기로 했다.";
+        }
+        function t2(i, j) {
+            p1.innerHTML = "오늘은 친구와" + i + "과" + j + "을 나눠먹었다";
+        }
+
+        function sss(i, j) {
+            p1.innerHTML = "올해목표는" + (i + j) + "만대 판매입니다";
+        }
+
+        const ccc = document.querySelector("#chil");
+        ccc.addEventListener("click", function(){
+            bbb(30,20)
+        });
+        function bbb(i,j){
+            alert(i+j);
+        }
+    </script>
+</body>
+</html>

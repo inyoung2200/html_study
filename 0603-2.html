@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표 함수</title>
+</head>
+<body>
+    <h2 onclick="a4()">마우스를 클릭 하세요.</h2>
+    <h3>마우스를 오버 하세요.</h3>
+    <main>마우스를 오버 하세요.</main>
+    <p></p>
+
+    <script>
+        const a1 = '화살표 함수 연습중';
+        const $h2 = document.querySelector('h2');
+        const $h3 = document.querySelector('h3');
+        const $main = document.querySelector('main');
+        
+        // onclick 정의시
+        let a4 = () => $h2.innerHTML = a1;
+        // function a4() {
+        //     $h2.innerHTML = a1;
+        // }
+
+        
+        // 이벤트핸들러 정의시
+        $h3.addEventListener("mouseover", () => a5());
+        // $h3.addEventListener("mouseover", a5);
+        a5 = () => $h3.innerHTML = a1;
+        // const a5 = function () {
+        //     $h3.innerHTML = a1;
+        // }
+        // function a5() {
+        //     $h3.innerHTML = a1;
+        // }
+
+
+        // 실행이 두가지 이상일때에는 {중가로} 필요
+        $main.addEventListener("mouseenter", () => {$main.innerHTML = a1; $main.style.background = "red";});
+        // $main.addEventListener("mouseenter", function() {
+        // $main.innerHTML = a1;
+        // $main.style.background = "red";
+        // });
+        
+    </script>
+</body>
+</html>
