@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        const $p = document.querySelector('p');
+
+        let order = prompt('오늘은 딸기, 사과, 수박이 준비되어있습니다. 무엇을 드릴까요?', '');
+        let answer = '';
+
+        if (order == '딸기') {
+            answer = '네 2,000원 입니다.';
+        } else if (order == '사과') {
+            answer = '네 3,000원 입니다.';
+        } else if (order == '수박') {
+            answer = '네 4,000원 입니다.';
+        } else {
+            answer = '죄송합니다.';
+        }
+        
+        $p.innerHTML = answer;
+    </script>
+</body>
+</html>

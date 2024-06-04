@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        let subeject = prompt('수강과목은?', '');
+        subeject = subeject.toUpperCase();
+        if(subeject == '자바스크립트') {
+            subeject = 'javascript';
+        }
+        switch (subeject) {
+            case 'HTML' :
+                subeject += '은 1학점입니다.';
+                break;
+            case 'CSS' :
+                subeject += '은 2학점입니다.';
+                break;
+            case 'JAVASCRIPT' :
+                subeject += '은 3학점입니다.';
+                break;
+            default :
+                subeject = '해당과목이 없습니다.';
+        }
+
+        document.querySelector('h1').innerHTML = subeject;
+
+
+
+    </script>
+</body>
+</html>

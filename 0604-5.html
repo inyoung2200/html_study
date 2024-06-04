@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="get">
+        <label for="n">학점입력 : </label>
+        <input type="number" min="0" max="100" id="n">
+        <button id="btn1">확인하기</button>
+    </form>
+    <p id="p1">결과 표시란</p>
+
+    <form action="#" method="get">
+        <label for="f">과일이름 : </label>
+        <input type="text" id="f">
+        <button id="btn2">확인하기</button>
+    </form>
+    <p id="p2">결과 표시란</p>
+
+    <script>
+        const $p1 = document.querySelector('#p1');
+        const btn1 = document.querySelector('#btn1');
+        const x = document.querySelector('#n');
+        
+        btn1.addEventListener('click', () => event1());
+
+        event1 = () => {
+            let xValue = x.value;
+            
+            if(xValue >= 60) {
+                xValue = '통과';
+            } else {
+                xValue = '낙점';
+            }
+
+            $p.innerHTML = xValue;
+        }
+
+        const $p2 = document.querySelector('#p2');
+        const btn2 = document.querySelector('#btn2');
+        const y = document.querySelector('#f');
+
+        btn2.addEventListener('click', () => event2());
+
+        event2 = () => {
+            let yValue = y.value;
+
+            switch (yValue) {
+                case '딸기' :
+                    yValue += '는 빨강색입니다.';
+                    break;
+                case '포도' :
+                    yValue += '는 보라색입니다.';
+                    break;
+                case '수박' :
+                    yValue += '는 초록색입니다.';
+                    break;
+                default :
+                    yValue = '다시 입력하세요'
+            }
+
+            $p2.innerHTML = yValue;
+        }
+    </script>
+</body>
+</html>

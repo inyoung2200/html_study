@@ -11,11 +11,16 @@
         padding: 0;
         box-sizing: border-box;
     }
+    
+    body {
+        background: beige url(./img/dog.png) repeat-x 0/cover;
+    }
 
     #layout {
-        width: 100%;
+        width: 70%;
         height: 100vh;
         background-color: #999;
+        margin: auto;
     }
 
     header, h1, nav, main, section, article, aside, footer {
@@ -77,6 +82,7 @@
 
     section, article, aside {
         background-color: #555;
+        overflow-y: auto;
     }
 
     section {
@@ -98,14 +104,6 @@
     }
 
     h2 {
-        height: 100%;
-    }
-
-    .sec1 h2 {
-        height: auto;
-    }
-
-    .sec2 h2 {
         height: auto;
     }
 
@@ -119,6 +117,20 @@
         padding: 10px;
     }
 
+    .art2 h2, aside h2 {
+        height: 100px;
+    }
+
+    .art2 p {
+        width: 100%;
+        height: 262px;
+        font-size: 16px;
+    }
+
+    aside p {
+        text-transform: lowercase;
+    }
+
     footer {
         width: 100%;
         background-color: #444;
@@ -130,7 +142,7 @@
         padding: 20px;
     }
 
-    address, p {
+    footer address, footer p {
         width: 80%;
         height: 50px;
         background-color: #333;
@@ -215,7 +227,7 @@
     <div id="layout">
         <header>
             <span class="sticker">header</span>
-            <h1>반응형웹<span class="sticker">h1</span></h1>
+            <h1 draggable="true">반응형웹<span class="sticker">h1</span></h1>
             <nav>
                 <span class="sticker">nav</span>
                 <a href="#">메뉴1</a>
@@ -246,23 +258,58 @@
                 <h2>
                     콘텐츠 그룹03
                 </h2>
-                
+                <!-- ul자리 -->
                 <video controls height="400px">
                     <source src="./media/sea.mp4" type="video/mp4">
                 </video>
             </section>
-            <article>
+            <article class="art2">
                 <span class="sticker">article</span>
                 <h2>주요기사</h2>
+                <p>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+                    기사내용<br>
+
+                </p>
             </article>
             <aside>
                 <span class="sticker">aside</span>
                 <h2>광고</h2>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
             </aside>
         </main>
         <footer>
             <span class="sticker">footer</span>
-            <address>경기도 안산시 단원구 와동</address>
+            <address draggable="true" id="amoguna">경기도 안산시 단원구 와동</address>
             <p>COPYEIGHT ⓒ All eighrt reserved</p>
         </footer>
     </div>
@@ -278,7 +325,28 @@
         $p.style.padding = "0 20px";
 
         $h2.after($ul);
-        $ul.innerHTML = "<li>리스트1</li><li>리스트2</li><li>리스트3</li>"
+        $ul.innerHTML = "<li>리스트1</li><li>리스트2</li><li>리스트3</li>";
+
+        // 드레그
+        const $h1 = document.querySelector("h1");
+        $h1.addEventListener("dragstart", () => drag1(3, 5));
+        drag1 = (i, j) => {
+            let a = i * j;
+            $h1.innerHTML = a;
+        }
+
+        $ul.setAttribute("draggable", true);
+        $ul.addEventListener("dragstart", () => drag2());
+        drag2 = () => {
+            $ul.innerHTML += "<li>드레그하면 리스트가 추가됨</li>";
+        }
+
+        document.addEventListener("dragstart", (e) => e.dataTransfer.setData('zzz', e.target.id));
+        document.addEventListener("dragover", (e) => e.preventDefault());   //이동허용
+        document.addEventListener("drop", (e) => {
+            const x = e.dataTransfer.getData('zzz');
+            e.target.appendChild(document.getElementById(x));
+        });
     </script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <p id="p2"></p>
+
+    <script>
+        const p1 = document.querySelector("#p1");
+        const p2 = document.querySelector("#p2");
+        let age = 20;
+        let admissionFee = '';
+
+        // if (age < 13) {
+        //     admissionFee = '2,000원';
+        // } else {
+        //     admissionFee = '4,000원';
+        // }
+        // p1.innerHTML = admissionFee;
+
+        if (age < 13) {
+            admissionFee = '2,000원';
+        } else if (age >= 13 && age < 20){
+            admissionFee = '4,000원';
+        } else {
+            admissionFee = '6,000원';
+        }
+        p1.innerHTML = admissionFee;
+
+
+        let age1 = prompt('나이입력', '');
+        let admissionFee1 = '';
+        if (age1 < 13 || age1 >=65) {
+            admissionFee1 = '2,000원';
+        } else if (age1 >= 13 && age1 < 20){
+            admissionFee1 = '4,000원';
+        } else {
+            admissionFee1 = '6,000원';
+        }
+        p2.innerHTML = admissionFee1;
+    </script>
+</body>
+</html>

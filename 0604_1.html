@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>3</p>
+
+    <script>
+        let x = 5;
+        let y = 3;
+        let z = "5";
+
+        const $p = document.querySelector('p');
+
+        console.log (y == $p.innerHTML);
+        console.log (y === $p.innerHTML);
+        y++;    //4(넘버)
+        console.log(y); //4(넘버)
+        $p.innerHTML += 1;  //31(스트링)
+        console.log($p.innerHTML);  //31(스트링)
+
+        let pp = Number($p.innerHTML);  //31(넘버)
+        pp++;   //32(넘버)
+        $p.innerHTML = pp;  //32
+
+        
+    </script>
+</body>
+</html>
