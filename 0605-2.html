@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>야구장 입장료</h3>
+    <select id="ba">
+        <option>선택</option>
+        <option value="1">아동</option>
+        <option value="2">청소년</option>
+        <option value="3">성인</option>
+    </select>
+    <p id="p1"></p>
+
+    <h3>과일 선택</h3>
+    <select id="fr">
+        <option>선택</option>
+        <option value="1">딸기</option>
+        <option value="2">바나나</option>
+        <option value="3">포도</option>
+    </select>
+    <p id="p2"></p>
+    
+
+    <script>
+        const x = document.querySelector('#ba');
+        x.addEventListener('change', () => zz());
+        zz = () => {
+            let y = x.value;
+            switch(y){
+                case '1' :
+                    y = '아동은 무료';
+                    break;
+                case '2' :
+                    y = '청소년은 2,000원';
+                    break;
+                default :
+                    y = '성인은 5,000원';
+                    break;
+            }
+
+            document.querySelector('#p1').innerHTML = y;
+        }
+
+        const y = document.querySelector('#fr');
+        y.addEventListener('change', () => cc());
+        cc = () => {
+            let i = y.selectedIndex;
+            let z = y[i].innerHTML;
+
+            switch(i) {
+                case 1 :
+                    z += '은 2,000원 입니다.';
+                    break;
+                case 2 :
+                    z += '은 3,000원 입니다.';
+                    break;
+                default :
+                    z += '은 4,000원 입니다.';
+                    break;
+            }
+
+            document.querySelector('#p2').innerHTML = z;
+        }
+    </script>
+</body>
+</html>
