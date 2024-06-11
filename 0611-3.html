@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout(), setInterval() 메소드를 통해 콜백함수 이해하기</title>
+</head>
+<body>
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+
+    <script>
+        const $h1 = document.querySelector('h1');
+        setTimeout( () => x(), 2000); //2초후에 x()함수 한번 호출
+        x = () => $h1.innerHTML = '기다려주셔서 감사합니다.';
+
+        window.addEventListener('load', () => y());
+
+        y = () => $h1.innerHTML = '만나서 반가워요';
+
+
+        const $h2 = document.querySelector('h2');
+        const $h3 = document.querySelector('h3');
+        setInterval( () => x1(), 2000); //1초마다 x1()함수 반복 호출
+        x1 = () => {
+            const d = new Date();
+            // console.log(d.getSeconds());
+            let year = d.getFullYear() +'년';
+            let month = d.getMonth() +'월';
+            let date = d.getDate() +'일';
+            let day = d.getDay();
+            switch (day) {
+                case 0 : day = '일요일';
+                break;
+                case 1 : day = '월요일';
+                break;
+                case 2 : day = '화요일';
+                break;
+                case 3 : day = '수요일';
+                break;
+                case 4 : day = '목요일';
+                break;
+                case 5 : day = '금요일';
+                break;
+                case 6 : day = '토요일';
+            }
+            $h2.innerHTML = `현재 날짜는 ${year} ${month} ${date} ${day} 입니다.`;
+            $h3.innerHTML = `현재 시각은 ${d.getHours()} : ${d.getMinutes()} : ${d.getSeconds()} 입니다.`;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <li>1000원</li>
+        <li>2000원</li>
+        <li>3000원</li>
+        <li>4000원</li>
+    </ol>
+    <footer>결과표시란</footer>
+    <script>
+        const x = document.querySelectorAll('ol li');
+        const y = document.querySelector('footer');
+        
+        let sum = 0;
+        x.forEach(function(i){
+            sum += parseInt(i.innerHTML);
+            
+        })
+        console.log(sum);
+        y.innerHTML = sum;
+    </script>
+</body>
+</html>

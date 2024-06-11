@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시작화면 애니와 2초후 팝업 보이기</title>
+    
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {
+            height: 200vh;
+        }
+        #x {
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+        }
+        .gra {
+            background-image: radial-gradient(circle, transparent 5%, red 10%);
+            animation: rara 3s both;
+        }
+        @keyframes rara {
+            from {
+                transform: scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: scale(30);
+                opacity: 0;
+            }
+        }
+        article {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -20%);
+            background-color: antiquewhite;
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            box-shadow: 0 0 10px 10px #000;
+            border-radius: 10px;
+            display: none;
+        }
+        article button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3>시작화면 애니메이션 - 교제 223p</h3>
+    <div id="x" class="gra"></div>
+    <section>
+        <h3>한글영상</h3>
+        <P>이 씨는 미국 조지타운대에서 국제경영학과를 졸업하고 인스타그램에서 패션 인플루언서로 활동했다. 이 씨는 패션 잡지 ‘보그 코리아’에서 인턴으로 근무했고 디올, 루이비통, 샤넬 등 명품과 비건 화장품 광고 모델로 활동하기도 했다. 이 씨의 인스타그램 팔로워(특정인의 계정을 구독하는 사람)는 13만명에 달한다.
+            이 씨의 아버지인 이해창 대표는 지난해 DL과 DL이앤씨 주식을 일부 매도하고 홀로서기 기조를 굳혔다. 켐텍은 2010년 DL그룹 계열사로 편입됐지만, 2022년 3월 친족 독립경영이 인정돼 그룹에서 제외됐다. 지난해 감사보고서 기준 이 대표는 회사 지분 72.24%를 보유하고 있으며 이 씨가 나머지 25.76%의 지분을 갖고 있다.
+            켐텍은 무역, 화학합성 수지 도소매 업체로 지난해 매출액 70억원, 영업손실 9743만원을 기록했다.
+            이 씨가 입학하는 조지타운로스쿨은 1870년에 설립됐으며, 수많은 정·재계 인사를 배출했다. 제롬 파월 미국 연방준비제도이사회 의장, 도널드 트럼프 전 미국 대통령 차녀인 티파니 트럼프도 이곳을 졸업했다. 정몽원 HL그룹 회장의 맏사위인 이윤행 부사장, 제너시스BBQ 그룹이 최연소 상무로 영입한 김태희 미국 변호사도 조지타운로스쿨 출신이다.
+        </P>
+        <P>이 씨는 미국 조지타운대에서 국제경영학과를 졸업하고 인스타그램에서 패션 인플루언서로 활동했다. 이 씨는 패션 잡지 ‘보그 코리아’에서 인턴으로 근무했고 디올, 루이비통, 샤넬 등 명품과 비건 화장품 광고 모델로 활동하기도 했다. 이 씨의 인스타그램 팔로워(특정인의 계정을 구독하는 사람)는 13만명에 달한다.
+            이 씨의 아버지인 이해창 대표는 지난해 DL과 DL이앤씨 주식을 일부 매도하고 홀로서기 기조를 굳혔다. 켐텍은 2010년 DL그룹 계열사로 편입됐지만, 2022년 3월 친족 독립경영이 인정돼 그룹에서 제외됐다. 지난해 감사보고서 기준 이 대표는 회사 지분 72.24%를 보유하고 있으며 이 씨가 나머지 25.76%의 지분을 갖고 있다.
+            켐텍은 무역, 화학합성 수지 도소매 업체로 지난해 매출액 70억원, 영업손실 9743만원을 기록했다.
+            이 씨가 입학하는 조지타운로스쿨은 1870년에 설립됐으며, 수많은 정·재계 인사를 배출했다. 제롬 파월 미국 연방준비제도이사회 의장, 도널드 트럼프 전 미국 대통령 차녀인 티파니 트럼프도 이곳을 졸업했다. 정몽원 HL그룹 회장의 맏사위인 이윤행 부사장, 제너시스BBQ 그룹이 최연소 상무로 영입한 김태희 미국 변호사도 조지타운로스쿨 출신이다.
+        </P>
+        <P>이 씨는 미국 조지타운대에서 국제경영학과를 졸업하고 인스타그램에서 패션 인플루언서로 활동했다. 이 씨는 패션 잡지 ‘보그 코리아’에서 인턴으로 근무했고 디올, 루이비통, 샤넬 등 명품과 비건 화장품 광고 모델로 활동하기도 했다. 이 씨의 인스타그램 팔로워(특정인의 계정을 구독하는 사람)는 13만명에 달한다.
+            이 씨의 아버지인 이해창 대표는 지난해 DL과 DL이앤씨 주식을 일부 매도하고 홀로서기 기조를 굳혔다. 켐텍은 2010년 DL그룹 계열사로 편입됐지만, 2022년 3월 친족 독립경영이 인정돼 그룹에서 제외됐다. 지난해 감사보고서 기준 이 대표는 회사 지분 72.24%를 보유하고 있으며 이 씨가 나머지 25.76%의 지분을 갖고 있다.
+            켐텍은 무역, 화학합성 수지 도소매 업체로 지난해 매출액 70억원, 영업손실 9743만원을 기록했다.
+            이 씨가 입학하는 조지타운로스쿨은 1870년에 설립됐으며, 수많은 정·재계 인사를 배출했다. 제롬 파월 미국 연방준비제도이사회 의장, 도널드 트럼프 전 미국 대통령 차녀인 티파니 트럼프도 이곳을 졸업했다. 정몽원 HL그룹 회장의 맏사위인 이윤행 부사장, 제너시스BBQ 그룹이 최연소 상무로 영입한 김태희 미국 변호사도 조지타운로스쿨 출신이다.
+        </P>
+    </section>
+    <article>
+        <h4>팝업</h4>
+        <button type="button">닫기</button>
+    </article>
+
+    <script>
+        setTimeout( () => off(), 1500);
+
+        off = () => {
+            document.querySelector('#x').style.display = 'none';
+            document.querySelector('article').style.display = 'block';
+        }
+
+        const btn = document.querySelector('article button');
+        btn.addEventListener('click', () => {
+            btn.parentElement.style.display = 'none';
+        })
+    </script>
+</body>
+</html>

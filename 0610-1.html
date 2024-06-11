@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <li>서울</li>
+        <li>대구</li>
+        <li>대전</li>
+        <li>부산</li>
+    </ol>
+    <footer>결과표시란</footer>
+    <script>    
+        const city = document.querySelectorAll('ol li');
+        const f = document.querySelector('footer');
+
+        //index번호 겟
+        // for (const i in city) {
+        //     console.log(i);
+        //     f.innerText = i;
+        // }
+
+        //항목내용 겟
+        let x ='';
+        for(const i of city) {
+            console.log(i);
+            x += i.innerText + ',';
+        };
+        f.innerText = x;
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval() 메소드로 공굴리기</title>
+
+    <style>
+        .ball1 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: aqua;
+            position: absolute;
+        }
+
+        .ball2 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: red;
+            position: absolute;
+        }
+
+        #ball {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="ball1"></div>
+    <div class="ball2"></div>
+
+    <div id="ball"></div>
+
+    <script>
+        const ball1 = document.querySelector('.ball1');
+        const ball2 = document.querySelector('.ball2');
+
+        setInterval( () => moveBall1(), 10);
+
+        let i = 10;
+        let x = true;
+
+        moveBall1 = () => {
+            if(x) {
+                i++;
+                if( i == 500) x = false;
+            }
+            else {
+                i--;
+                if( i == 0) x = true;
+            }
+            ball1.style.left = i + 'px';
+            ball2.style.top = i + 'px';
+        }
+
+        const ball = document.getElementById("ball");
+
+        let position = 0;
+        let direction = 1; // 1 for right, -1 for left
+        const speed = 4; // Speed of the ball
+
+        const moveBall2 = () => {
+        const windowWidth = window.innerWidth;
+        const ballWidth = ball.offsetWidth;
+
+        position += direction * speed;
+
+        // Reverse direction if the ball hits the edge
+        if (position + ballWidth >= windowWidth || position <= 0) {
+        direction *= -1;
+        }
+
+        ball.style.left = position + 'px';
+        };
+
+        setInterval(moveBall2, 10);
+    </script>
+</body>
+</html>
